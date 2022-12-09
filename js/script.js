@@ -7,3 +7,14 @@ productList.addEventListener("click", function (e) {
   }
 });
 cart.addEventListener("click", removeProduct);
+function addToCart(product) {
+  if (addedProduct.indexOf(product) === -1) {
+    let li = document.createElement("li");
+    li.setAttribute("id", product);
+    li.innerHTML = `${
+      product[0].toUpperCase() + product.slice(1)
+    } <a href="#">Remove</a>`;
+    cart.appendChild(li);
+    addedProduct.push(product);
+  }
+}
