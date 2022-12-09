@@ -18,3 +18,12 @@ function addToCart(product) {
     addedProduct.push(product);
   }
 }
+function removeProduct(e) {
+  if (e.target.hasAttribute("href")) {
+    let product = e.target.parentElement.getAttribute("id");
+    let parentProduct = e.target.parentElement;
+
+    addedProduct = addedProduct.filter((pr) => pr !== product);
+    parentProduct.remove();
+  }
+}
